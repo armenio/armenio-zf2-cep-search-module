@@ -1,5 +1,5 @@
 <?php
-namespace Aircode\Cep;
+namespace Armenio\Cep;
 
 use Zend\Http\Client;
 use Zend\Http\Client\Adapter\Curl;
@@ -56,12 +56,12 @@ class Cep
 				$result = $json;
 			}
 
-            $isException = false;
+			$isException = false;
 		} catch (\Zend\Http\Exception\RuntimeException $e){
-            $isException = true;
-        } catch (\Zend\Http\Client\Adapter\Exception\RuntimeException $e){
-        	$isException = true;
-        } catch (\Zend\Json\Exception\RuntimeException $e) {
+			$isException = true;
+		} catch (\Zend\Http\Client\Adapter\Exception\RuntimeException $e){
+			$isException = true;
+		} catch (\Zend\Json\Exception\RuntimeException $e) {
 			$isException = true;
 		} catch (\Zend\Json\Exception\RecursionException $e2) {
 			$isException = true;

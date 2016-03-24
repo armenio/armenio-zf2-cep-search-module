@@ -1,27 +1,27 @@
 {
-    "name": "armenio/armenio-cep",
-    "description": "Cep library",
-    "type": "library",
-    "keywords": [
-        "cep",
-        "helper",
-        "zf2",
-        "armenio"
-    ],
-    "homepage": "https://github.com/armenio/armenio-cep",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Rafael Armênio",
-            "email": "rafael.armenio@gmail.com"
-        }
-    ],
-    "require": {
-        "zendframework/zendframework": "2.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Aircode\\Cep\\": "src/"
-        }
-    },
+	"name": "armenio/armenio-cep",
+	"description": "Cep library",
+	"type": "library",
+	"keywords": [
+		"cep",
+		"helper",
+		"zf2",
+		"armenio"
+	],
+	"homepage": "https://github.com/armenio/armenio-cep",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Rafael Armênio",
+			"email": "rafael.armenio@gmail.com"
+		}
+	],
+	"require": {
+		"zendframework/zendframework": "2.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Aircode\\Cep\\": "src/"
+		}
+	},
 }
