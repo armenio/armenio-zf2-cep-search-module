@@ -24,8 +24,8 @@ class Cep
 		$cep = preg_replace('/[^0-9]*/', '', $cep);
 
 		try{
-			$uri = sprintf('http://aircode.com.br/webservice/correios/cep/%s', $cep);
-			$client = new Client($uri);
+			$url = sprintf('http://aircode.com.br/webservice/correios/cep/%s', $cep);
+			$client = new Client($url);
 			$client->setAdapter(new Curl());
 			$client->setMethod('GET');
 			$client->setOptions(array(
