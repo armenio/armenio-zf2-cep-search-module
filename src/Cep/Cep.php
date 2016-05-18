@@ -1,5 +1,14 @@
 <?php
+/**
+ * Rafael Armenio <rafael.armenio@gmail.com>
+ *
+ * @link http://github.com/armenio for the source repository
+ */
+ 
 namespace Armenio\Cep;
+
+use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 use Zend\Http\Client;
 use Zend\Http\Client\Adapter\Curl;
@@ -8,8 +17,25 @@ use Zend\Json\Json;
 /**
  * @author	 Rafael Armenio
  */
-class Cep
+class Cep implements ServiceLocatorAwareInterface
 {
+    protected $serviceLocator;
+
+    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
+    {
+        $this->serviceLocator = $serviceLocator;
+    }
+
+    public function getServiceLocator()
+    {
+        return $this->serviceLocator;
+    }
+
+    public function search($cep = '00000000')
+	{
+		return self::search($cep);
+	}
+	
 	public static function search($cep = '00000000')
 	{
 		$result = array(

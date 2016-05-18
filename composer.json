@@ -20,8 +20,11 @@
 		"zendframework/zendframework": "2.*"
 	},
 	"autoload": {
-		"psr-4": {
-			"Armenio\\Cep\\": "src/"
-		}
+		"psr-0": {
+			"Armenio\\Cep\\": "src"
+		},
+		"classmap": [
+			"Module.php"
+		]
 	}
 }
