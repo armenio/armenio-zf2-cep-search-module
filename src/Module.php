@@ -7,10 +7,12 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-return array(
-    'service_manager' => array(
-        'factories' => array(
-            'Armenio\Cep\Cep' => 'Armenio\Cep\CepServiceFactory',
-        ),
-    ),    
-);
+namespace Armenio\Cep;
+
+class Module
+{
+    public function getConfig()
+    {
+        return include dirname(__DIR__) . '/config/module.config.php';
+    }
+}
