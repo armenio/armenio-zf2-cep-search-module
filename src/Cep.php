@@ -12,7 +12,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 use Zend\Http\Client;
 use Zend\Http\Client\Adapter\Curl;
-use Zend\Json\Json;
+use Zend\Json;
 
 /**
  * @author	 Rafael Armenio
@@ -66,7 +66,7 @@ class Cep implements ServiceLocatorAwareInterface
 				
 			$body = $response->getBody();
 			
-			$json = Json::decode($body, 1);
+			$json = Json\Json::decode($body, 1);
 			//{"id":"22881","cidade":"Curitiba","logradouro":"Marechal Deodoro","bairro":"Centro","cep":"80060-010","tp_logradouro":"Rua","uf":"PR"}
 
 			if( ! empty($json['cep']) ){
@@ -87,13 +87,13 @@ class Cep implements ServiceLocatorAwareInterface
 			$isException = true;
 		} catch (\Zend\Http\Client\Adapter\Exception\RuntimeException $e){
 			$isException = true;
-		} catch (\Zend\Json\Exception\RuntimeException $e) {
+		} catch (Json\Exception\RuntimeException $e) {
 			$isException = true;
-		} catch (\Zend\Json\Exception\RecursionException $e2) {
+		} catch (Json\Exception\RecursionException $e2) {
 			$isException = true;
-		} catch (\Zend\Json\Exception\InvalidArgumentException $e3) {
+		} catch (Json\Exception\InvalidArgumentException $e3) {
 			$isException = true;
-		} catch (\Zend\Json\Exception\BadMethodCallException $e4) {
+		} catch (Json\Exception\BadMethodCallException $e4) {
 			$isException = true;
 		}
 
