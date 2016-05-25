@@ -30,13 +30,8 @@ class Cep implements ServiceLocatorAwareInterface
     {
         return $this->serviceLocator;
     }
-
-    public function search($cep = '00000000')
-	{
-		return self::search($cep);
-	}
 	
-	public static function search($cep = '00000000')
+	public function search($cep = '00000000')
 	{
 		$result = array(
 			'endereco' => '',
