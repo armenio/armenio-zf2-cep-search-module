@@ -1,5 +1,5 @@
 {
-	"name": "armenio/armenio-cep",
+	"name": "armenio/armenio-zf2-cep-search-module",
 	"description": "Cep library",
 	"type": "library",
 	"keywords": [
@@ -8,7 +8,7 @@
 		"zf2",
 		"armenio"
 	],
-	"homepage": "https://github.com/armenio/armenio-cep",
+	"homepage": "https://github.com/armenio/armenio-zf2-cep-search-module",
 	"license": "MIT",
 	"authors": [
 		{
