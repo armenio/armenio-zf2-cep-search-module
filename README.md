@@ -1,1 +1,1 @@
-# armenio-cep
+# armenio-zf2-cep-search-module
