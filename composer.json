@@ -1,6 +1,6 @@
 {
 	"name": "armenio/armenio-zf2-cep-search-module",
-	"description": "Cep library",
+	"description": "Cep Module for Zend Framework 2",
 	"type": "library",
 	"keywords": [
 		"cep",
