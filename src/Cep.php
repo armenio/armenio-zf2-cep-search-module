@@ -7,9 +7,6 @@
  
 namespace Armenio\Cep;
 
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-
 use Zend\Http\Client;
 use Zend\Http\Client\Adapter\Curl;
 use Zend\Json;
@@ -17,21 +14,9 @@ use Zend\Json;
 /**
  * @author	 Rafael Armenio
  */
-class Cep implements ServiceLocatorAwareInterface
+class Cep
 {
-    protected $serviceLocator;
-
-    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
-    {
-        $this->serviceLocator = $serviceLocator;
-    }
-
-    public function getServiceLocator()
-    {
-        return $this->serviceLocator;
-    }
-	
-	public function search($cep = '00000000')
+    public static function search($cep = '00000000')
 	{
 		$result = array(
 			'endereco' => '',
