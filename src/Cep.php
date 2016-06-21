@@ -18,14 +18,14 @@ class Cep
 {
     public static function search($cep = '00000000')
 	{
-		$result = array(
+		$result = [
 			'endereco' => '',
 			'bairro' => '',
 			'cep' => $cep,
 			'cidade' => '',
 			'estado' => '',
 			'pais' => 'Brasil'
-		);
+		];
 
 		$cep = preg_replace('/[^0-9]*/', '', $cep);
 
@@ -34,11 +34,11 @@ class Cep
 			$client = new Client($url);
 			$client->setAdapter(new Curl());
 			$client->setMethod('GET');
-			$client->setOptions(array(
-				'curloptions' => array(
+			$client->setOptions([
+				'curloptions' => [
 					CURLOPT_HEADER => false,
-				)
-			));
+				]
+			]);
 
 			
 			$response = $client->send();
@@ -50,14 +50,14 @@ class Cep
 			//{"id":"22881","cidade":"Curitiba","logradouro":"Marechal Deodoro","bairro":"Centro","cep":"80060-010","tp_logradouro":"Rua","uf":"PR"}
 
 			if( ! empty($json['cep']) ){
-				$result = array(
+				$result = [
 					'endereco' => trim(sprintf('%s %s', $json['tp_logradouro'], $json['logradouro'])),
 					'bairro' => $json['bairro'],
 					'cep' => $json['cep'],
 					'cidade' => $json['cidade'],
 					'estado' => $json['uf'],
 					'pais' => $json['pais']
-				);
+				];
 			}else{
 				$result = $json;
 			}
